@@ -1,10 +1,12 @@
 package com.example.actualproject.repository;
 
 import com.example.actualproject.entity.Person;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import javax.transaction.Transactional;
 
 import java.util.List;
 
@@ -20,4 +22,9 @@ public interface PersonRepository extends PagingAndSortingRepository<Person,Inte
             "p.id = ce.employee_id and\n" +
             "c.id = ce.car_id;",nativeQuery = true)
     List<Object[]> findcars(@Param("pid")int person_id);
+
+    @Transactional
+    @Modifying
+    @Query(value = "update person set name=:name where id =:id ",nativeQuery = true)
+    void updatename(@Param("name") String name, @Param("id") int id );
 }
