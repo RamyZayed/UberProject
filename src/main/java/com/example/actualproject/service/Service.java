@@ -5,8 +5,10 @@ import com.example.actualproject.entity.Employee;
 import com.example.actualproject.entity.Person;
 import com.example.actualproject.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +29,9 @@ public class Service {
 
 */
     @GetMapping(value = "/person")
-    public List<Object[] >getCards(@RequestParam int id){
-        List<Object[]>  cars = personRepository.findcars(id);
-        return cars;
+    public Person getCards(@RequestParam int id){
+        return personRepository.findById(id).get();
+
 
     }
 
@@ -39,8 +41,17 @@ public class Service {
         personRepository.save(e);
     }
 
-    @PatchMapping(value = "/person")
-    public void updateEmployee(){
+    @PutMapping(value = "/person/{id}")
+    public void updateEmployee(@PathVariable("id") int id ,@RequestBody Employee e ){
+        personRepository.updatename(e.getName(),id);
+
+    }
+
+
+    @DeleteMapping(value = "/person")
+    public void deletePerson(@RequestParam int id )
+    {
+        personRepository.deleteById(id);
     }
 
 }
