@@ -1,17 +1,16 @@
 package com.example.actualproject.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.*;
 
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class Employee extends Person{
+    @NotNull(message = "ranking is a no go")
     private String ranking;
     private int salary;
 

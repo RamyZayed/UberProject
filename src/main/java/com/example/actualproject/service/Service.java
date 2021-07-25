@@ -3,20 +3,28 @@ package com.example.actualproject.service;
 
 import com.example.actualproject.entity.Employee;
 import com.example.actualproject.entity.Person;
+import com.example.actualproject.repository.EmployeeRepository;
 import com.example.actualproject.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
 public class Service {
 
     @Autowired
     PersonRepository personRepository;
+
+    @Autowired
+    EmployeeRepository employeeRepository;
 
 
 /*
@@ -28,17 +36,20 @@ public class Service {
     }
 
 */
+    // done
     @GetMapping(value = "/person")
-    public Person getCards(@RequestParam int id){
-        return personRepository.findById(id).get();
-
+    public List<Person> getCards(@RequestParam int page, @RequestParam int size){
+        Pageable result= PageRequest.of(page,size);
+        Page<Person> mylist = personRepository.findAll(result);
+        return mylist.toList();
 
     }
 
 
     @PostMapping(value = "/person")
-    public void addingemployee(@RequestBody Employee e){
+    public Employee addingemployee(@Valid @RequestBody Employee e){
         personRepository.save(e);
+        return e;
     }
 
 
@@ -52,7 +63,7 @@ public class Service {
     @DeleteMapping(value = "/person")
     public void deletePerson(@RequestParam int id )
     {
-        personRepository.deleteById(id);
+        employeeRepository.deleteById(id);
     }
 
 }
