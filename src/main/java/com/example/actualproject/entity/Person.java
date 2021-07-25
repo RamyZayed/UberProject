@@ -1,6 +1,7 @@
 package com.example.actualproject.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,16 +23,18 @@ public abstract class Person {
     private Address address;
 
     @OneToOne(mappedBy = "person",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonManagedReference(value = "license_person")
     private License license;
 
     @OneToMany(mappedBy = "person",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonManagedReference(value = "person_number")
     private Set<PhoneNumber> numbers;
 
-    @JsonBackReference(value = "license_person")
+
     public License getLicense() {
         return license;
     }
-    @JsonBackReference(value = "person_number")
+
     public Set<PhoneNumber> getNumbers() {
         return numbers;
     }

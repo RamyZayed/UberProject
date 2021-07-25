@@ -135,7 +135,7 @@ class ActualProjectApplicationTests {
 
         Customer c = new Customer();
         c.setAge(25);
-        c.setName("WithLicesne");
+        c.setName("Anwar");
         Address address = new Address();
         address.setStreet("Tira");
         address.setCity("Ramallah");
