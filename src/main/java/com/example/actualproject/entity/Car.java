@@ -1,6 +1,7 @@
 package com.example.actualproject.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,9 +19,9 @@ public class Car {
     private String color;
 
     @ManyToMany(mappedBy = "cars")
+    @JsonBackReference(value = "work")
     private Set<Employee> employees;
 
-    @JsonBackReference(value = "car_emloyee")
     public Set<Employee> getEmployees() {
         return employees;
     }

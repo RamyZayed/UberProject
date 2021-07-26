@@ -1,24 +1,26 @@
 package com.example.actualproject.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.*;
 
 
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class Employee extends Person{
+    @NotNull(message = "ranking is a no go")
     private String ranking;
     private int salary;
+
+
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "Car_Employee", joinColumns =  @JoinColumn(name = "employee_id",referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name="car_id",referencedColumnName = "id"))
-    private Set<Car> cars ;
+    @JsonBackReference(value = "work")
+    private Set<Car> cars;
 
     @Override
     public String toString() {
@@ -44,7 +46,6 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    @JsonBackReference(value = "car_emloyee")
     public Set<Car> getCars() {
         return cars;
     }

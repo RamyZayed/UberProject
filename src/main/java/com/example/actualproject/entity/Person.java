@@ -9,14 +9,17 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Person {
+public  class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotNull(message = "this is a nono")
     private String name;
     private int age;
     @Embedded
@@ -29,6 +32,7 @@ public abstract class Person {
     @OneToMany(mappedBy = "person",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JsonManagedReference(value = "person_number")
     private Set<PhoneNumber> numbers;
+
 
 
     public License getLicense() {
