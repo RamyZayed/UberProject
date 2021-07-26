@@ -47,6 +47,7 @@ public class Controller {
 
     @PostMapping(value = "/emp")
     public Employee createEmployee(@RequestBody @Valid Employee emp){
+        System.out.println("wt");
         employeeService.addEmployee(emp);
         return emp;
     }
