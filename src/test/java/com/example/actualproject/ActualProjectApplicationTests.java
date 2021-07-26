@@ -165,4 +165,17 @@ class ActualProjectApplicationTests {
         }
     }
 
+    @Test
+    public void testJpaProject(){
+        PersonView personView = personRepository.getPersonByAge(25).get(1);
+      //  System.out.println(personView.getName());
+
+    }
+
+    @Test
+    public void testOpenProjection(){
+        PersonView pp = personRepository.getPersonByAge(25).get(0);
+        System.out.println(pp.getNameWithAge());
+
+    }
 }

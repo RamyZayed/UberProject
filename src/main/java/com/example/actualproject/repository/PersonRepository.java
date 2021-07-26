@@ -1,5 +1,6 @@
 package com.example.actualproject.repository;
 
+import com.example.actualproject.PersonView;
 import com.example.actualproject.entity.Person;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -12,6 +13,8 @@ import java.util.List;
 
 @Repository
 public interface PersonRepository extends PagingAndSortingRepository<Person,Integer> {
+
+    List<PersonView> getPersonByAge(int age);
 
     @Query(value = "select p.street from person p",nativeQuery = true)
     List<Object []> Somethingidk();
