@@ -1,4 +1,15 @@
 package com.example.actualproject.service;
 
-public interface EmployeeService extends PersonService{
+
+import com.example.actualproject.entity.Employee;
+import com.example.actualproject.entity.Person;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+
+public interface EmployeeService  {
+    List<Employee> getAllEmployees(int page , int size);
+    Employee addEmployee(Employee employee);
+
 }

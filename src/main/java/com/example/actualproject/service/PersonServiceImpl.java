@@ -14,7 +14,6 @@ import java.util.List;
 
 @Service
 public class PersonServiceImpl implements PersonService{
-
     @Autowired
     PersonRepository personRepository;
 

@@ -1,6 +1,8 @@
 package com.example.actualproject.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -17,6 +19,7 @@ public class Employee extends Person{
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "Car_Employee", joinColumns =  @JoinColumn(name = "employee_id",referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name="car_id",referencedColumnName = "id"))
+    @JsonManagedReference(value = "car_emloyee")
     private Set<Car> cars ;
 
     @Override

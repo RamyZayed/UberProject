@@ -56,8 +56,8 @@ public class Service {
     @PutMapping(value = "/person/{id}")
     public void updateEmployee(@PathVariable("id") int id ,@RequestBody Employee e ){
         personRepository.updatename(e.getName(),id);
-
     }
+
 
 
     @DeleteMapping(value = "/person")
