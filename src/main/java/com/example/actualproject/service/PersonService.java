@@ -11,6 +11,8 @@ public interface PersonService {
 
     List<Person> get(int page , int size);
 
+    Person findPersonById(int id);
+
     void Delete(int id);
 
 }

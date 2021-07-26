@@ -14,6 +14,7 @@ import java.util.List;
 
 @Service
 public class PersonServiceImpl implements PersonService{
+
     @Autowired
     PersonRepository personRepository;
 
@@ -34,6 +35,11 @@ public class PersonServiceImpl implements PersonService{
         Pageable result= PageRequest.of(page,size);
         Page<Person> mylist = personRepository.findAll(result);
         return mylist.toList();
+    }
+
+    @Override
+    public Person findPersonById(int id) {
+        return personRepository.findById(id).get();
     }
 
     @Override

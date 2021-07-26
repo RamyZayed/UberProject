@@ -23,6 +23,10 @@ public class EmployeeServiceImpl  implements EmployeeService{
         return mylist.toList();
     }
 
+    @Override
+    public Employee findById(int id) {
+        return employeeRepository.findById(id).get();
+    }
 
 
     @Override
@@ -30,6 +34,18 @@ public class EmployeeServiceImpl  implements EmployeeService{
     public Employee addEmployee(Employee employee) {
         employeeRepository.save(employee);
         return employee;
+    }
+
+    @Override
+    public Employee updateEmployee(Employee employee) {
+        employeeRepository.updatename(employee.getName(), employee.getId());
+        return employeeRepository.findById(employee.getId()).get();
+    }
+
+    @Override
+    public void deleteEmployeeById(int id) {
+        employeeRepository.deleteById(id);
+
     }
 
 }

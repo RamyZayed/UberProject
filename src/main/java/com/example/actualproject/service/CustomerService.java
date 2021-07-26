@@ -1,5 +1,14 @@
 package com.example.actualproject.service;
 
-public interface CustomerService  {
+import com.example.actualproject.entity.Customer;
+import com.example.actualproject.entity.Employee;
 
+import java.util.List;
+
+public interface CustomerService  {
+    List<Customer> getAllCustomers(int page , int size);
+    Customer findById(int id );
+    Customer addCustomer(Customer customer);
+    Customer updateCustomer(Customer customer,int id);
+    void deleteCustomerById(int id);
 }
