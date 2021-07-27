@@ -19,15 +19,20 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImpl  implements EmployeeService{
+
     @Autowired
-    EmployeeRepository employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     public List<EmployeeDto> getAllEmployees(int page, int size){
+
         Pageable result= PageRequest.of(page,size);
-        Page<Employee> mylist = employeeRepository.findAll(result);
-        List<EmployeeDto> listoo = new ArrayList<>();
-        mylist.forEach(emp -> listoo.add(EmployeeDtoMapper.Instance.toDto(emp)));
-        return listoo;
+        return EmployeeDtoMapper.Instance.toDtoList(employeeRepository.findAll(result).toList());
+
+
+       // List<EmployeeDto> listoo = new ArrayList<>();
+      //  mylist.forEach(emp -> listoo.add(EmployeeDtoMapper.Instance.toDto(emp)));
+      //  return listoo;
+
     }
 
     @Override
