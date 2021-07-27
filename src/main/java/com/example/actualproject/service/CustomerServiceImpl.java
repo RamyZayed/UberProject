@@ -19,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService {
     CustomerRepository customerRepository;
 
     @Override
-    public List<Customer> getAllCustomers(int page, int size) {
+    public List<Customer> getAllCustomers(int page, int size) { ///// fix this
         Pageable result= PageRequest.of(page,size);
         Page<Customer> mylist = customerRepository.findAll(result);
         return mylist.toList();

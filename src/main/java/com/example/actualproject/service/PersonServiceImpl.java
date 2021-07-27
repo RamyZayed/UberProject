@@ -36,10 +36,10 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public List<PersonAdressDTO> get(int page  , int size) {
         Pageable result= PageRequest.of(page,size);
-        Page<Person> mylist = personRepository.findAll(result);
-        List<PersonAdressDTO> listoo = new ArrayList<>();
+       return  PersonAddressMapper.Instance.toDtoList(personRepository.findAll(result).toList()) ;
+    /*    List<PersonAdressDTO> listoo = new ArrayList<>();
         mylist.forEach(person -> listoo.add(PersonAddressMapper.Instance.toDto(person,person.getAddress())));
-        return listoo;
+        return listoo;*/
     }
 
     @Override
