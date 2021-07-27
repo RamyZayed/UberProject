@@ -12,7 +12,7 @@ import java.util.*;
 
 @SpringBootTest
 class ActualProjectApplicationTests {
-
+/*
     @Autowired
     private PersonRepository personRepository;
 
@@ -177,5 +177,5 @@ class ActualProjectApplicationTests {
         PersonView pp = personRepository.getPersonByAge(25).get(0);
         System.out.println(pp.getNameWithAge());
 
-    }
+    }*/
 }

@@ -2,6 +2,8 @@ package com.example.actualproject.service;
 
 import com.example.actualproject.entity.Employee;
 import com.example.actualproject.entity.Person;
+import com.example.actualproject.entity.dto.PersonAddressMapper;
+import com.example.actualproject.entity.dto.PersonAdressDTO;
 import com.example.actualproject.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,15 +34,18 @@ public class PersonServiceImpl implements PersonService{
 
 
     @Override
-    public List<Person> get(int page  , int size) {
+    public List<PersonAdressDTO> get(int page  , int size) {
         Pageable result= PageRequest.of(page,size);
         Page<Person> mylist = personRepository.findAll(result);
-        return mylist.toList();
+        List<PersonAdressDTO> listoo = new ArrayList<>();
+        mylist.forEach(person -> listoo.add(PersonAddressMapper.Instance.toDto(person,person.getAddress())));
+        return listoo;
     }
 
     @Override
-    public Person findPersonById(int id) {
-        return personRepository.findById(id).get();
+    public PersonAdressDTO findPersonById(int id) {
+
+        return  PersonAddressMapper.Instance.toDto(personRepository.findById(id).get(),personRepository.findById(id).get().getAddress());
     }
 
     @Override

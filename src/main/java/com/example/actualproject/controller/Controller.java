@@ -1,17 +1,19 @@
 package com.example.actualproject.controller;
 
-import com.example.actualproject.entity.Customer;
-import com.example.actualproject.entity.Employee;
-import com.example.actualproject.entity.Person;
+import com.example.actualproject.entity.*;
+import com.example.actualproject.entity.dto.EmployeeDto;
+import com.example.actualproject.entity.dto.PersonAddressMapper;
+import com.example.actualproject.entity.dto.PersonAdressDTO;
+import com.example.actualproject.repository.PersonRepository;
 import com.example.actualproject.service.CustomerService;
 import com.example.actualproject.service.EmployeeService;
 import com.example.actualproject.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class Controller {
@@ -31,12 +33,12 @@ public class Controller {
     }
 
     @GetMapping(value = "/person")
-    public List<Person> findAll(@RequestParam int page, @RequestParam int size){
+    public List<PersonAdressDTO> findAll(@RequestParam int page, @RequestParam int size){
         return personService.get(page , size);
     }
 
     @GetMapping(value = "/person/{id}")
-    public Person findPersonById(@PathVariable int id){
+    public PersonAdressDTO findPersonById(@PathVariable int id){
         return personService.findPersonById(id);
     }
 
@@ -45,15 +47,21 @@ public class Controller {
        return personService.update(e,id);
     }
 
-    @DeleteMapping(value = "/person")
-    public void deletePerson(@RequestParam int id )
+    @DeleteMapping(value = "/person/{id}")
+    public void deletePerson(@PathVariable int id )
     {
         personService.Delete(id);
     }
 
 
-    @GetMapping(value = "/emp/{page}/{size}")
-    public List<Employee> findEmployees(@PathVariable("page") int page, @PathVariable("size") int size){
+
+    @GetMapping(value = "/emp/{id}")
+    public EmployeeDto findEmployeeById(@PathVariable int id){
+        return employeeService.findById(id);
+    }
+
+    @GetMapping(value = "/emp")
+    public List<EmployeeDto> findEmployees(@RequestParam("page") int page, @RequestParam("size") int size){
         return employeeService.getAllEmployees(page,size);
     }
 
@@ -61,11 +69,6 @@ public class Controller {
     public Employee createEmployee(@RequestBody @Valid Employee emp){
         employeeService.addEmployee(emp);
         return emp;
-    }
-
-    @GetMapping(value = "/emp")
-    public Employee findEmployeeById(@RequestParam int id){
-        return employeeService.findById(id);
     }
 
 
@@ -82,8 +85,8 @@ public class Controller {
 
 
 
-    @GetMapping(value = "/customer/{page}/{size}")
-    public List<Customer> findAllCustomers(@PathVariable("page") int page, @PathVariable("size") int size){
+    @GetMapping(value = "/customer")
+    public List<Customer> findAllCustomers(@RequestParam("page") int page, @RequestParam("size") int size){
         return customerService.getAllCustomers(page,size);
     }
 
@@ -93,8 +96,8 @@ public class Controller {
         return c;
     }
 
-    @GetMapping(value = "/customer")
-    public Customer findCustomerById(@RequestParam int id){
+    @GetMapping(value = "/customer/{id}")
+    public Customer findCustomerById(@PathVariable int id){
         return customerService.findById(id);
     }
 
@@ -111,6 +114,17 @@ public class Controller {
 
     }
 
+    @Autowired
+    private  PersonRepository pp ;
 
+    @GetMapping(value = "/dto/{id}")
+    @ResponseBody
+    public PersonAdressDTO something(@PathVariable int id){
 
+        Optional<Person> p = pp.findById(id);
+        if(!p.isPresent())
+            return null;
+        PersonAdressDTO pDto = PersonAddressMapper.Instance.toDto(p.get(),p.get().getAddress());
+        return pDto;
+    }
 }

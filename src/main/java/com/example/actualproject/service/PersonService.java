@@ -1,6 +1,7 @@
 package com.example.actualproject.service;
 
 import com.example.actualproject.entity.Person;
+import com.example.actualproject.entity.dto.PersonAdressDTO;
 
 import java.util.List;
 
@@ -9,9 +10,9 @@ public interface PersonService {
 
     Person update(Person person, int id);
 
-    List<Person> get(int page , int size);
+    List<PersonAdressDTO> get(int page , int size);
 
-    Person findPersonById(int id);
+    PersonAdressDTO findPersonById(int id);
 
     void Delete(int id);
 

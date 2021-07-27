@@ -12,7 +12,8 @@ import java.util.Set;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Data
+@Setter
+@Getter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public  class Person {
