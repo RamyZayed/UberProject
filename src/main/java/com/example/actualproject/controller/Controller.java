@@ -42,9 +42,9 @@ public class Controller {
         return personService.findPersonById(id);
     }
 
-    @PutMapping(value = "/person")
-    public Person updatePerson(@RequestParam int id ,@RequestBody Person e ){
-       return personService.update(e,id);
+    @PutMapping(value = "/person/{pid}")
+    public Person updatePerson(@PathVariable int pid ,@RequestBody Person e ){
+       return personService.update(e,pid);
     }
 
     @DeleteMapping(value = "/person/{id}")

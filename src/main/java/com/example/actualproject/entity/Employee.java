@@ -10,7 +10,7 @@ import java.util.*;
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 public class Employee extends Person{
-    @NotNull(message = "ranking is a no go")
+    @NotNull(message = "The Ranking field shouldn't be empty")
     private String ranking;
     private int salary;
 
