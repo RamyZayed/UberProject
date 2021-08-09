@@ -7,14 +7,26 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.*;
 import javax.transaction.Transactional;
 
 import java.util.List;
 
+
+
+
+
+
 @Repository
 public interface PersonRepository extends PagingAndSortingRepository<Person,Integer> {
 
-    List<PersonView> getPersonByAge(int age);
+/*    @Query(value = "select p.name , p.age from person p where p.name =:name ",nativeQuery = true)
+    List<PersonView> hehe(String name);*/
+
+    @Query(nativeQuery = true, name = "fedro")
+    List<PersonView> hehe(@Param("name") String name);
+
 
     @Query(value = "select p.street from person p",nativeQuery = true)
     List<Object []> Somethingidk();

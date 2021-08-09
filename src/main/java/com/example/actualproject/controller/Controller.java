@@ -1,5 +1,6 @@
 package com.example.actualproject.controller;
 
+import com.example.actualproject.PersonView;
 import com.example.actualproject.entity.*;
 import com.example.actualproject.entity.dto.EmployeeDto;
 import com.example.actualproject.entity.dto.PersonAddressMapper;
@@ -9,10 +10,13 @@ import com.example.actualproject.service.CustomerService;
 import com.example.actualproject.service.EmployeeService;
 import com.example.actualproject.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -27,8 +31,18 @@ public class Controller {
     @Autowired
     private CustomerService customerService;
 
+
+    @GetMapping("/ss")
+    public List<PersonView> doe(){
+
+       return pp.hehe("Hisko");
+    }
+
+
     @PostMapping(value = "/person")
-    public Person addPerson(@Valid @RequestBody Person e){
+    public Person addPerson(@Valid  @RequestBody  Person e, BindingResult bindingResult){
+        if(bindingResult.hasErrors())
+            System.out.println("asdada\n\n\n\n");
        return personService.create(e);
     }
 

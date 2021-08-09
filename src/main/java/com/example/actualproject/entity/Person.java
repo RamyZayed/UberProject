@@ -1,7 +1,9 @@
 package com.example.actualproject.entity;
 
+import com.example.actualproject.PersonView;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +13,26 @@ import java.util.List;
 import java.util.Set;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+
+@SqlResultSetMapping(
+        name="findingstuff",
+                columns = {
+                        @ColumnResult(name = "name"),
+                        @ColumnResult(name = "age",type = Integer.class)
+                }
+
+
+)
+
+
+@NamedNativeQuery(name ="fedro",
+        resultClass = PersonView.class,
+        resultSetMapping = "findingstuff",
+        query = "select p.name , p.age from person p where p.name =:name "
+
+)
+
 
 @Setter
 @Getter
@@ -33,7 +55,6 @@ public  class Person {
     @OneToMany(mappedBy = "person",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JsonManagedReference(value = "person_number")
     private Set<PhoneNumber> numbers;
-
 
 
     public License getLicense() {

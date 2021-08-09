@@ -3,10 +3,17 @@ package com.example.actualproject;
 
 import org.springframework.beans.factory.annotation.Value;
 
-public interface PersonView {
-//    String getName();
+import javax.persistence.*;
 
-    @Value("#{target.name + ' ' + target.age}")
-    String getNameWithAge();
+
+
+
+public interface PersonView {
+
+    String getName();
+    int getAge();
+
+    //@Value("#{target.name + ' ' + target.age}")
+    //String getNameWithAge();
 }
 
