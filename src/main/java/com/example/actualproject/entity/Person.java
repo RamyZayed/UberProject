@@ -3,7 +3,6 @@ package com.example.actualproject.entity;
 import com.example.actualproject.PersonView;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

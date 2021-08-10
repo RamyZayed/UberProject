@@ -1,6 +1,7 @@
 package com.example.actualproject.controller;
 
 import com.example.actualproject.PersonView;
+import com.example.actualproject.aspect.Timer;
 import com.example.actualproject.entity.*;
 import com.example.actualproject.entity.dto.EmployeeDto;
 import com.example.actualproject.entity.dto.PersonAddressMapper;
@@ -35,10 +36,11 @@ public class Controller {
     @GetMapping("/ss")
     public List<PersonView> doe(){
 
-       return pp.hehe("Hisko");
+       return pp.hehe("Joe");
     }
 
 
+    @Timer
     @PostMapping(value = "/person")
     public Person addPerson(@Valid  @RequestBody  Person e, BindingResult bindingResult){
         if(bindingResult.hasErrors())
@@ -46,21 +48,25 @@ public class Controller {
        return personService.create(e);
     }
 
+    @Timer
     @GetMapping(value = "/person")
     public List<PersonAdressDTO> findAll(@RequestParam int page, @RequestParam int size){
         return personService.get(page , size);
     }
 
+    @Timer
     @GetMapping(value = "/person/{id}")
     public PersonAdressDTO findPersonById(@PathVariable int id){
         return personService.findPersonById(id);
     }
 
+    @Timer
     @PutMapping(value = "/person/{pid}")
     public Person updatePerson(@PathVariable int pid ,@RequestBody Person e ){
        return personService.update(e,pid);
     }
 
+    @Timer
     @DeleteMapping(value = "/person/{id}")
     public void deletePerson(@PathVariable int id )
     {
@@ -69,16 +75,19 @@ public class Controller {
 
 
 
+    @Timer
     @GetMapping(value = "/emp/{id}")
     public EmployeeDto findEmployeeById(@PathVariable int id){
         return employeeService.findById(id);
     }
 
+    @Timer
     @GetMapping(value = "/emp")
     public List<EmployeeDto> findEmployees(@RequestParam("page") int page, @RequestParam("size") int size){
         return employeeService.getAllEmployees(page,size);
     }
 
+    @Timer
     @PostMapping(value = "/emp")
     public Employee createEmployee(@RequestBody @Valid Employee emp){
         employeeService.addEmployee(emp);
@@ -86,6 +95,7 @@ public class Controller {
     }
 
 
+    @Timer
     @DeleteMapping(value = "/emp")
     public void deleteEmployee(@RequestParam int id )
     {
@@ -99,28 +109,33 @@ public class Controller {
 
 
 
+    @Timer
     @GetMapping(value = "/customer")
     public List<Customer> findAllCustomers(@RequestParam("page") int page, @RequestParam("size") int size){
         return customerService.getAllCustomers(page,size);
     }
 
+    @Timer
     @PostMapping(value = "/customer")
     public Customer createCustomer(@RequestBody @Valid Customer c){
         customerService.addCustomer(c);
         return c;
     }
 
+    @Timer
     @GetMapping(value = "/customer/{id}")
     public Customer findCustomerById(@PathVariable int id){
         return customerService.findById(id);
     }
 
+    @Timer
     @DeleteMapping(value = "/customer")
     public void deleteCustomer(@RequestParam int id )
     {
         customerService.deleteCustomerById(id);
     }
 
+    @Timer
     @PutMapping(value = "/customer")
     public Customer updateCustomer(@RequestParam int id,@RequestBody Customer c){
         return  customerService.updateCustomer(c,id);
@@ -131,6 +146,7 @@ public class Controller {
     @Autowired
     private  PersonRepository pp ;
 
+    @Timer
     @GetMapping(value = "/dto/{id}")
     @ResponseBody
     public PersonAdressDTO something(@PathVariable int id){

@@ -10,10 +10,10 @@ import javax.persistence.*;
 
 public interface PersonView {
 
-    String getName();
-    int getAge();
+   // String getName();
+    //int getAge();
 
-    //@Value("#{target.name + ' ' + target.age}")
-    //String getNameWithAge();
+    @Value("#{target.name + ' ' + target.age}")
+    String getNameWithAge();
 }
 

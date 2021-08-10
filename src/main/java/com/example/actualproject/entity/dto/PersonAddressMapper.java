@@ -17,5 +17,5 @@ public interface PersonAddressMapper {
     PersonAdressDTO toDto(Person person, Address address);
 
     @Mapping(source = "person.name" , target = "personName")
-    List<PersonAdressDTO> toDtoList(List<Person  > p);
+    List<PersonAdressDTO> toDtoList(List<Person> p);
 }
