@@ -18,9 +18,24 @@
         <file>newLog2.log</file>
     </appender>
 
+    <appender name="filo2" class="ch.qos.logback.core.FileAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <file>someempfile.log</file>
+    </appender>
+
     <logger level="info"
             name="com.example.actualproject.service.PersonServiceImpl">
         <appender-ref ref="filo" />
+    </logger>
+
+
+    <logger level="info"
+            name="com.example.actualproject.service.EmployeeServiceImpl">
+        <appender-ref ref="filo2" />
     </logger>
 
     <root level="info">
