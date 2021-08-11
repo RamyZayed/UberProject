@@ -28,7 +28,7 @@
     </appender>
 
     <logger level="info"
-            name="com.example.actualproject.service.PersonServiceImpl">
+            name="com.example.actualproject.aspect.helper">
         <appender-ref ref="filo" />
     </logger>
 

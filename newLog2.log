@@ -1,4 +1,18 @@
-16:05:11.022 [http-nio-8080-exec-1] INFO  c.e.a.service.PersonServiceImpl - accesing the service of getting all the people with page number of:0and page size of :1
-16:05:29.554 [http-nio-8080-exec-4] INFO  c.e.a.service.PersonServiceImpl - accesing the service of getting all the people with page number of:0and page size of :2
-16:06:51.404 [http-nio-8080-exec-1] INFO  c.e.a.service.PersonServiceImpl - accesing the service of getting all the people with page number of:0and page size of :2
-16:06:52.070 [http-nio-8080-exec-3] INFO  c.e.a.service.PersonServiceImpl - accesing the service of getting all the people with page number of:0and page size of :2
+10:55:27.925 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
+10:56:22.229 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
+10:56:28.454 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [8]
+10:56:28.480 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - NOT FOUND
+10:59:47.022 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [8]
+10:59:47.092 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - NOT FOUND
+10:59:58.399 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
+11:00:00.940 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
+11:27:54.762 [http-nio-8080-exec-6] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
+11:27:54.796 [http-nio-8080-exec-6] INFO  c.e.actualproject.aspect.helper - NOT FOUND
+11:27:59.105 [http-nio-8080-exec-9] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
+11:27:59.114 [http-nio-8080-exec-9] INFO  c.e.actualproject.aspect.helper - NOT FOUND
+11:28:00.151 [http-nio-8080-exec-7] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
+11:28:00.164 [http-nio-8080-exec-7] INFO  c.e.actualproject.aspect.helper - NOT FOUND
+11:28:15.697 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
+11:28:15.707 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - NOT FOUND
+11:32:21.972 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
+11:32:22.061 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"}

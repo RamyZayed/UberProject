@@ -22,27 +22,27 @@ import java.util.List;
 @Service
 public class PersonServiceImpl implements PersonService{
 
-    Logger logger = LoggerFactory.getLogger(PersonServiceImpl.class);
+   // Logger logger = LoggerFactory.getLogger(PersonServiceImpl.class);
     @Autowired
     PersonRepository personRepository;
 
     @Override
     public Person create( Person person) {
-        logger.trace("created a person is accessed" +person.toString());
+      //  logger.trace("created a person is accessed" +person.toString());
         return personRepository.save(person);
     }
 
     @Override
     public Person update(Person person , int id) {
          personRepository.updatename(person.getName(),id);
-        logger.trace("trying update Person with id : " +id +"    With Values :"  +person.toString() );
+       // logger.trace("trying update Person with id : " +id +"    With Values :"  +person.toString() );
          return personRepository.findById(id).get();
     }
 
 
     @Override
     public List<PersonAdressDTO> get(int page  , int size) {
-        logger.info("accesing the service of getting all the people with page number of:"+page +"and page size of :"+size);
+        //logger.info("accesing the service of getting all the people with page number of:"+page +"and page size of :"+size);
         Pageable result= PageRequest.of(page,size);
         List<Address> addresses =new ArrayList<>();
         return  PersonAddressMapper.Instance.toDtoList(personRepository.findAll(result).toList() ) ;
@@ -50,13 +50,13 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public PersonAdressDTO findPersonById(int id) {
-        logger.trace("Trying to find Person with id = " +id);
+      //  logger.trace("Trying to find Person with id = " +id);
         return  PersonAddressMapper.Instance.toDto(personRepository.findById(id).get(),personRepository.findById(id).get().getAddress());
     }
 
     @Override
     public void Delete(int id) {
-        logger.trace("Trying to delete person with id=" +id);
+       // logger.trace("Trying to delete person with id=" +id);
         personRepository.deleteById(id);
 
     }

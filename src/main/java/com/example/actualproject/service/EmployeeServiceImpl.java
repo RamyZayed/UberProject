@@ -25,14 +25,14 @@ import java.util.List;
 @Service
 public class EmployeeServiceImpl  implements EmployeeService{
 
-    private static final Logger logger = LogManager.getLogger(EmployeeServiceImpl.class);
+   // private static final Logger logger = LogManager.getLogger(EmployeeServiceImpl.class);
 
     @Autowired
     private EmployeeRepository employeeRepository;
 
     public List<EmployeeDto> getAllEmployees(int page, int size){
 
-        logger.error("Trying to find all employees with page = "+page +"and size = "+size);
+      //  logger.error("Trying to find all employees with page = "+page +"and size = "+size);
         Pageable result= PageRequest.of(page,size);
         return EmployeeDtoMapper.Instance.toDtoList(employeeRepository.findAll(result).toList());
 
@@ -45,7 +45,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
 
     @Override
     public EmployeeDto findById(int id) {
-        logger.trace("trying to find person with id = "+id);
+      //  logger.trace("trying to find person with id = "+id);
         EmployeeDto someone = EmployeeDtoMapper.Instance.toDto(employeeRepository.findById(id).get());
         return someone;
     }
@@ -54,21 +54,21 @@ public class EmployeeServiceImpl  implements EmployeeService{
     @Override
     @Transactional
     public Employee addEmployee(Employee employee) {
-        logger.trace("trying to add new employee: "+employee.toString());
+      //  logger.trace("trying to add new employee: "+employee.toString());
         employeeRepository.save(employee);
         return employee;
     }
 
     @Override
     public Employee updateEmployee(Employee employee) {
-        logger.trace("trying to update  employee: "+employee.toString());
+        //logger.trace("trying to update  employee: "+employee.toString());
         employeeRepository.updatename(employee.getName(), employee.getId());
         return employeeRepository.findById(employee.getId()).get();
     }
 
     @Override
     public void deleteEmployeeById(int id) {
-        logger.trace("trying to delete an employee with id: "+id);
+       // logger.trace("trying to delete an employee with id: "+id);
         employeeRepository.deleteById(id);
 
     }
