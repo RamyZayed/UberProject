@@ -2,10 +2,11 @@ package com.example.actualproject.security;
 
 import com.google.common.collect.Sets;
 
+
 import java.util.Set;
 
 public enum ApplicationUserRole {
-    STUDENT(Sets.newHashSet(ApplicationUserPermession.PERSON_READ)),
+    STUDENT(Sets.newHashSet()),
     ADMIN(Sets.newHashSet(ApplicationUserPermession.PERSON_READ,ApplicationUserPermession.PERSON_WRITE));
 
     private final Set<ApplicationUserPermession> permessions;
