@@ -32,12 +32,12 @@ public class Controller {
     @Autowired
     private CustomerService customerService;
 
-
+/*
     @GetMapping("/ss")
     public List<PersonView> doe(){
 
        return pp.hehe("Joe");
-    }
+    }*/
 
 
     @Timer
@@ -143,7 +143,7 @@ public class Controller {
 
     }
 
-    @Autowired
+   /* @Autowired
     private  PersonRepository pp ;
 
     @Timer
@@ -156,5 +156,5 @@ public class Controller {
             return null;
         PersonAdressDTO pDto = PersonAddressMapper.Instance.toDto(p.get(),p.get().getAddress());
         return pDto;
-    }
+    }*/
 }

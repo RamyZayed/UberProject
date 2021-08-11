@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
+import java.util.NoSuchElementException;
+
 
 @Aspect
 @Component
@@ -41,11 +43,20 @@ public class helper {
         LOGGER.info("Method invoked :"+className +" : "+methodName+"()arguments : "+objectMapper.writeValueAsString(array));
 
 
-        Object object = pp.proceed();
-        
-        LOGGER.info("Returned value"+objectMapper.writeValueAsString(object));
-        return object;
+        Object object=null;
+        try {
+            object = pp.proceed();
 
+        }catch(NoSuchElementException e)
+        {
+            LOGGER.error("no such element is found");
+        }
+        finally {
+
+
+            LOGGER.info("Returned value"+objectMapper.writeValueAsString(object));
+            return object;
+        }
     }
 
 

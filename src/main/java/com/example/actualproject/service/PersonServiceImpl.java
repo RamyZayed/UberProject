@@ -44,14 +44,13 @@ public class PersonServiceImpl implements PersonService{
     public List<PersonAdressDTO> get(int page  , int size) {
         //logger.info("accesing the service of getting all the people with page number of:"+page +"and page size of :"+size);
         Pageable result= PageRequest.of(page,size);
-        List<Address> addresses =new ArrayList<>();
         return  PersonAddressMapper.Instance.toDtoList(personRepository.findAll(result).toList() ) ;
     }
 
     @Override
     public PersonAdressDTO findPersonById(int id) {
       //  logger.trace("Trying to find Person with id = " +id);
-        return  PersonAddressMapper.Instance.toDto(personRepository.findById(id).get(),personRepository.findById(id).get().getAddress());
+        return  PersonAddressMapper.Instance.toDto(personRepository.findById(id).get());
     }
 
     @Override

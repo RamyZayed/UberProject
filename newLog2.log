@@ -1,18 +1,94 @@
-10:55:27.925 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
-10:56:22.229 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
-10:56:28.454 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [8]
-10:56:28.480 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - NOT FOUND
-10:59:47.022 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [8]
-10:59:47.092 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - NOT FOUND
-10:59:58.399 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
-11:00:00.940 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [5]
-11:27:54.762 [http-nio-8080-exec-6] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
-11:27:54.796 [http-nio-8080-exec-6] INFO  c.e.actualproject.aspect.helper - NOT FOUND
-11:27:59.105 [http-nio-8080-exec-9] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
-11:27:59.114 [http-nio-8080-exec-9] INFO  c.e.actualproject.aspect.helper - NOT FOUND
-11:28:00.151 [http-nio-8080-exec-7] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
-11:28:00.164 [http-nio-8080-exec-7] INFO  c.e.actualproject.aspect.helper - NOT FOUND
-11:28:15.697 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
-11:28:15.707 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - NOT FOUND
-11:32:21.972 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [8]
-11:32:22.061 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"}
+14:46:52.015 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : getAllEmployees()arguments : [0,5]
+14:46:52.231 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value[{"name":"Hussam","ranking":"Hisko"},{"name":"Hussam2","ranking":"Hisko"},{"name":"Hussam Final","ranking":"Hisko"},{"name":"Hussam Final","ranking":"Hisko"},{"name":"Hisko Frisko","ranking":"Hisko"}]
+14:47:18.813 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [2312]
+14:48:28.624 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [2312]
+14:48:56.312 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [2312]
+14:49:15.524 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [2312]
+14:51:43.559 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [2312]
+14:51:43.654 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+14:52:51.963 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : findById()arguments : [2312]
+14:52:52.015 [http-nio-8080-exec-1] ERROR c.e.actualproject.aspect.helper - no such element is found
+14:52:52.015 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+14:54:08.831 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,2]
+14:54:08.957 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null}]
+14:55:32.269 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [10]
+14:55:32.274 [http-nio-8080-exec-8] ERROR c.e.actualproject.aspect.helper - no such element is found
+14:55:32.274 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+14:55:33.879 [http-nio-8080-exec-9] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [3]
+14:55:33.882 [http-nio-8080-exec-9] ERROR c.e.actualproject.aspect.helper - no such element is found
+14:55:33.882 [http-nio-8080-exec-9] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+14:55:34.595 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [4]
+14:55:34.600 [http-nio-8080-exec-10] ERROR c.e.actualproject.aspect.helper - no such element is found
+14:55:34.600 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+14:55:37.783 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [7]
+14:55:37.790 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"very new","street":"Tira","city":"Ramallah"}
+15:03:25.745 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,5]
+15:03:25.927 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null}]
+15:04:52.300 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,5]
+15:06:40.675 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null}]
+15:14:06.845 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,5]
+15:14:07.193 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null},{"personName":null,"street":null,"city":null}]
+15:21:04.389 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [7]
+15:21:04.493 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"very new","street":"Tira","city":"Ramallah"}
+15:21:10.864 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,2]
+15:21:11.003 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":"very new","street":"Tira","city":"Ramallah"},{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"}]
+15:21:15.113 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,10]
+15:21:15.151 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+15:21:38.830 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,9]
+15:21:38.917 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+15:21:41.902 [http-nio-8080-exec-6] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,10]
+15:21:41.924 [http-nio-8080-exec-6] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+15:21:44.146 [http-nio-8080-exec-7] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,2]
+15:21:44.165 [http-nio-8080-exec-7] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":"very new","street":"Tira","city":"Ramallah"},{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"}]
+15:21:45.020 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,3]
+15:21:45.040 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":"very new","street":"Tira","city":"Ramallah"},{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"},{"personName":"Hussam2","street":"EKleem BAtonia","city":"Ramallah"}]
+15:22:09.016 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,7]
+15:22:09.035 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Returned valuenull
+15:22:12.258 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,6]
+15:22:12.282 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":"very new","street":"Tira","city":"Ramallah"},{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"},{"personName":"Hussam2","street":"EKleem BAtonia","city":"Ramallah"},{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"},{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"},{"personName":"Hisko Frisko","street":"EKleem BAtonia","city":"Ramallah"}]
+15:26:30.035 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:26:30.114 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:26:31.616 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:26:31.624 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:28:27.091 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:28:27.164 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:28:52.705 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:28:52.711 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:31:32.383 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:31:32.465 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:33:01.307 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:33:01.313 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:36:36.165 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:36:36.255 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:37:35.660 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : get()arguments : [0,3]
+15:37:35.765 [http-nio-8080-exec-10] INFO  c.e.actualproject.aspect.helper - Returned value[{"personName":"very new","street":"Tira","city":"Ramallah"},{"personName":"Hussam","street":"EKleem BAtonia","city":"Ramallah"},{"personName":"Hussam2","street":"EKleem BAtonia","city":"Ramallah"}]
+15:37:38.676 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:37:38.683 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:46:09.302 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:46:09.387 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:46:19.917 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.EmployeeServiceImpl : getAllEmployees()arguments : [0,5]
+15:46:20.041 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Returned value[{"name":"Hussam","ranking":"Hisko"},{"name":"Hussam2","ranking":"Hisko"},{"name":"Hussam Final","ranking":"Hisko"},{"name":"Hussam Final","ranking":"Hisko"},{"name":"Hisko Frisko","ranking":"Hisko"}]
+15:48:29.024 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:48:29.111 [http-nio-8080-exec-8] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:48:46.212 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:48:46.290 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:48:48.559 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:48:48.566 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:49:06.786 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:49:06.795 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:49:22.944 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:49:23.025 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:49:25.172 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:49:25.179 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:49:32.575 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:49:32.583 [http-nio-8080-exec-4] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:51:08.821 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:51:08.899 [http-nio-8080-exec-5] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:51:37.224 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:51:37.318 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:51:49.001 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:51:49.008 [http-nio-8080-exec-2] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:51:52.578 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:51:52.586 [http-nio-8080-exec-3] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
+15:52:24.048 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Method invoked :class com.example.actualproject.service.PersonServiceImpl : findPersonById()arguments : [12]
+15:52:24.126 [http-nio-8080-exec-1] INFO  c.e.actualproject.aspect.helper - Returned value{"personName":"Hussam Final","street":"EKleem BAtonia","city":"Ramallah"}
