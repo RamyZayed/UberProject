@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
-@Repository("fake")
+@Repository
 public class FakeApplicationUserDAOService implements ApplicationUserDAO{
 
     private final PasswordEncoder passwordEncoder;
@@ -59,7 +59,6 @@ public class FakeApplicationUserDAOService implements ApplicationUserDAO{
                         true,
                         true
                 )
-
 
 
 

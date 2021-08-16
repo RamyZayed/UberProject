@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -44,8 +45,14 @@ public class EmployeeServiceImpl  implements EmployeeService{
     }
 
     @Override
+    @Cacheable(value = "myCache")
     public EmployeeDto findById(int id) {
-      //  logger.trace("trying to find person with id = "+id);
+       try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //  logger.trace("trying to find person with id = "+id);
         EmployeeDto someone = EmployeeDtoMapper.Instance.toDto(employeeRepository.findById(id).get());
         return someone;
     }

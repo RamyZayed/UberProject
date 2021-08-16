@@ -47,10 +47,10 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                     .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilter(new jwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
-                .addFilterAfter(new JwtTokenVerifier(secretKey, jwtConfig),jwtUsernameAndPasswordAuthenticationFilter.class)
+                    .addFilter(new jwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
+                    .addFilterAfter(new JwtTokenVerifier(secretKey, jwtConfig),jwtUsernameAndPasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/","index","/css/*","/js/*").permitAll()
+                .antMatchers("/emp/**","/","index","/css/*","/js/*").permitAll()
                 .anyRequest()
                 .authenticated();
 
@@ -58,11 +58,12 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-    /***
+/*
+**
      *
      * this was for form authnetication
-     */
-/*
+
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -72,11 +73,12 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/","index","/css/*","/js/*").permitAll()
               //  .antMatchers("/person/*").hasRole(ApplicationUserRole.PERSON.name())
-*/
-/*                .antMatchers(HttpMethod.POST,"/person").hasAnyAuthority(ApplicationUserPermession.PERSON_WRITE.getPermession()) // anyone that has the person_write permession can access this
+
+
+                .antMatchers(HttpMethod.POST,"/person").hasAnyAuthority(ApplicationUserPermession.PERSON_WRITE.getPermession()) // anyone that has the person_write permession can access this
                 .antMatchers(HttpMethod.DELETE,"/person/*").hasAnyAuthority(ApplicationUserPermession.PERSON_WRITE.getPermession()) // anyone that has the person_write permession can access this
                 .antMatchers(HttpMethod.PUT,"/person/*").hasAnyAuthority(ApplicationUserPermession.PERSON_WRITE.getPermession()) // anyone that has the person_write permession can access this
-                .antMatchers(HttpMethod.GET,"/person/*","/person").hasAnyRole(ApplicationUserRole.ADMIN.name(),ApplicationUserRole.ADMINTRAINEE.name())// anyone that has the person_write permession can access this*//*
+                .antMatchers(HttpMethod.GET,"/person/*","/person").hasAnyRole(ApplicationUserRole.ADMIN.name(),ApplicationUserRole.ADMINTRAINEE.name())// anyone that has the person_write permession can access this
 
                 .anyRequest()
                 .authenticated()
@@ -100,6 +102,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                     .deleteCookies("JSESSIONID","remember-me")
                     .logoutSuccessUrl("/login");
     }
+
+
 */
 
     @Bean
@@ -114,8 +118,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(daoauthenticationProvider());
     }
-
-    /*    @Override
+/*
+    @Override
     @Bean
     protected UserDetailsService userDetailsService() {
          UserDetails AnwarUser = User.builder()
@@ -148,4 +152,5 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     }*/
+
 }

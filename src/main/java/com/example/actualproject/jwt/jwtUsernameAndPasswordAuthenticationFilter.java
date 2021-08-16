@@ -2,6 +2,7 @@ package com.example.actualproject.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -75,7 +76,6 @@ public class jwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
         /**
          * the above code is for generating a token
          */
-
         response.addHeader(jwtConfig.getAuthorizationHeader(), jwtConfig.getTokenPrefix() +token); //this is for sending it
     }
 }
