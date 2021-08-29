@@ -24,4 +24,6 @@ public interface EmployeeRepository extends PagingAndSortingRepository<Employee,
             " on person.id =:id\n" +
             " set person.name =:name ;",nativeQuery = true)
     void updatename(@Param("name") String name, @Param("id") int id );
+
+
 }

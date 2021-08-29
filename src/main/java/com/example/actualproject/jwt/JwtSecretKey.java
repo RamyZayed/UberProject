@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.jwt;
 
 import io.jsonwebtoken.security.Keys;
@@ -23,3 +24,4 @@ public class JwtSecretKey {
         return Keys.hmacShaKeyFor(jwtConfig.getSecretKey().getBytes());
     }
 }
+*/

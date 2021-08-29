@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.auth;
 
 import org.springframework.stereotype.Service;
@@ -9,3 +10,4 @@ public interface ApplicationUserDAO {
 
     public Optional<ApplicationUser> selectApplicationUserByUserName(String username);
 }
+*/

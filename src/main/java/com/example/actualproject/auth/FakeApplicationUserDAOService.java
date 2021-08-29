@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.auth;
 
 import com.example.actualproject.security.ApplicationUserRole;
@@ -68,3 +69,4 @@ public class FakeApplicationUserDAOService implements ApplicationUserDAO{
         return applicationUsers;
     }
 }
+*/

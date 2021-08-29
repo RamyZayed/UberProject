@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -73,9 +74,12 @@ public class jwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
                 .setExpiration(java.sql.Date.valueOf(LocalDate.now().plusDays(jwtConfig.getTokenExpirationAfterDays())))
                 .signWith(secretKey)
                 .compact();
-        /**
+        */
+/**
          * the above code is for generating a token
-         */
+         *//*
+
         response.addHeader(jwtConfig.getAuthorizationHeader(), jwtConfig.getTokenPrefix() +token); //this is for sending it
     }
 }
+*/

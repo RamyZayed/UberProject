@@ -2,12 +2,14 @@ package com.example.actualproject.service;
 
 import com.example.actualproject.entity.Customer;
 import com.example.actualproject.entity.Employee;
+import com.example.actualproject.entity.Trip;
 import com.example.actualproject.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,6 +19,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     CustomerRepository customerRepository;
+
+    @Autowired
+    RestTemplate restTemplate;
 
     @Override
     public List<Customer> getAllCustomers(int page, int size) { ///// fix this
@@ -47,5 +52,14 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void deleteCustomerById(int id) {
         customerRepository.deleteById(id);
+    }
+
+    @Override
+    public Trip findCustomers(String Customerid) {
+
+        String url = "http://trip-service/trip/customer/"+Customerid;
+        System.out.println(url);
+        return restTemplate.getForObject(url, Trip.class);
+
     }
 }

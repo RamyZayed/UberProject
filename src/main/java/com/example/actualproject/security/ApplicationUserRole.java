@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.security;
 
 import com.google.common.collect.Sets;
@@ -29,7 +30,9 @@ public enum ApplicationUserRole {
         Set<SimpleGrantedAuthority> permessions = getPermessions().stream()
                 .map(permession -> new SimpleGrantedAuthority(permession.getPermession()))
                 .collect(Collectors.toSet());
+
         permessions.add(new SimpleGrantedAuthority("ROLE_"+this.name()));
         return permessions;
     }
 }
+*/

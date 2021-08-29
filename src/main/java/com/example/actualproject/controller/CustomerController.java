@@ -2,6 +2,7 @@ package com.example.actualproject.controller;
 
 import com.example.actualproject.aspect.Timer;
 import com.example.actualproject.entity.Customer;
+import com.example.actualproject.entity.Trip;
 import com.example.actualproject.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -47,6 +48,16 @@ public class CustomerController {
         return  customerService.updateCustomer(c,id);
 
 
+    }
+
+
+    @Timer
+    @GetMapping (value = "/customer/trip/{id}")
+    public Trip getTrip(@PathVariable String id){
+
+        Trip t = customerService.findCustomers(id);
+        System.out.println(t.toString());
+        return t;
     }
 
 }

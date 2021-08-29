@@ -8,7 +8,6 @@ import com.example.actualproject.service.CustomerService;
 import com.example.actualproject.service.EmployeeService;
 import com.example.actualproject.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +24,7 @@ public class PersonController {
         // hasRole('ROLE_')   hasAnyRole('ROLE_')   hasAuthority('permission') hasAnyAuthority('permission)
 
     @Timer
-    @PreAuthorize("hasAuthority('person:write')")
+ //   @PreAuthorize("hasAuthority('person:write')")
     @PostMapping(value = "/person")
     public Person addPerson(@Valid  @RequestBody  Person e, BindingResult bindingResult){
         if(bindingResult.hasErrors())
@@ -34,28 +33,28 @@ public class PersonController {
     }
 
     @Timer
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_ADMINTRAINEE')")
+  //  @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_ADMINTRAINEE')")
     @GetMapping(value = "/person")
     public List<PersonAdressDTO> findAll(@RequestParam int page, @RequestParam int size){
         return personService.get(page , size);
     }
 
     @Timer
-    @PreAuthorize("hasAuthority('person:read')")
+   // @PreAuthorize("hasAuthority('person:read')")
     @GetMapping(value = "/person/{id}")
     public PersonAdressDTO findPersonById(@PathVariable int id){
         return personService.findPersonById(id);
     }
 
     @Timer
-    @PreAuthorize("hasAuthority('person:write')")
+  //  @PreAuthorize("hasAuthority('person:write')")
     @PutMapping(value = "/person/{pid}")
     public Person updatePerson(@PathVariable int pid ,@RequestBody Person e ){
        return personService.update(e,pid);
     }
 
     @Timer
-    @PreAuthorize("hasAuthority('person:write')")
+    //@PreAuthorize("hasAuthority('person:write')")
     @DeleteMapping(value = "/person/{id}")
     public void deletePerson(@PathVariable int id )
     {

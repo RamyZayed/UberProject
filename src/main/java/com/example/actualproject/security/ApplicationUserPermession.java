@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.security;
 
 public enum ApplicationUserPermession {
@@ -15,3 +16,4 @@ public enum ApplicationUserPermession {
         return permession;
     }
 }
+*/

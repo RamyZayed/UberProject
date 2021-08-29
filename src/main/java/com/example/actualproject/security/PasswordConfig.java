@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.security;
 
 import org.springframework.context.annotation.Bean;
@@ -14,3 +15,4 @@ public class PasswordConfig {
         return new BCryptPasswordEncoder(10);
     }
 }
+*/

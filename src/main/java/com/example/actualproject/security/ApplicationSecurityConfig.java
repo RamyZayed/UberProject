@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.security;
 
 import com.example.actualproject.auth.ApplicationUserService;
@@ -58,6 +59,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+*/
 /*
 **
      *
@@ -104,7 +106,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-*/
+*//*
+
 
     @Bean
     public DaoAuthenticationProvider daoauthenticationProvider() {
@@ -118,6 +121,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(daoauthenticationProvider());
     }
+*/
 /*
     @Override
     @Bean
@@ -151,6 +155,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
          );
 
 
-    }*/
+    }*//*
+
 
 }
+*/

@@ -63,7 +63,6 @@ class PersonControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("asda"))
         .andReturn();
-
         then(personService).should().create(any(Person.class));
 
     }

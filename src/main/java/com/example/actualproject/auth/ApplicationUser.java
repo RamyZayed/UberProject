@@ -1,3 +1,4 @@
+/*
 package com.example.actualproject.auth;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -69,3 +70,4 @@ public class ApplicationUser implements UserDetails {
         return isEnabled;
     }
 }
+*/
